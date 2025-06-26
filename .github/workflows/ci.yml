@@ -2,9 +2,9 @@ name: Frontend CI
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
 
 jobs:
   build-and-test:
@@ -18,22 +18,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false # 手动安装依赖
+      - name: Install pnpm globally
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint
+      - name: Run Lint
         run: pnpm lint
 
-      - name: Run tests
+      - name: Run Tests
         run: pnpm test
 
-      - name: Build
+      - name: Build Project
         run: pnpm build
