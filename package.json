@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --mode development",
+    "lint": "eslint . --ext .ts,.vue",
+    "test": "vitest run",
     "build": "vite build",
     "preview": "vite preview",
     "prepare": "husky",
