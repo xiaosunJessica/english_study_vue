@@ -80,32 +80,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue"
-import { getTabsList } from "@/api/corpus"
-import { BookOpen, Headphones, AudioWaveform, Pointer } from "lucide-vue-next"
-const iconMap: Record<string, any> = {
+import { ref, onMounted } from "vue";
+import { getTabsList } from "@/api/corpus";
+import { BookOpen, Headphones, AudioWaveform, Pointer } from "lucide-vue-next";
+const iconMap: Record<string, unknown> = {
   BookOpen,
   Headphones,
   AudioWaveform,
   Pointer,
-}
+};
 
 interface DetailModule {
-  id: number
-  type: string
-  title: string
-  description?: string
-  level?: string
-  duration?: string
-  exercises?: string
-  cls?: string
-  icon: string
+  id: number;
+  type: string;
+  title: string;
+  description?: string;
+  level?: string;
+  duration?: string;
+  exercises?: string;
+  cls?: string;
+  icon: string;
 }
-const detailedModules = ref<DetailModule[]>([])
+const detailedModules = ref<DetailModule[]>([]);
 onMounted(async () => {
-  const res = await getTabsList()
-  detailedModules.value = res.data
-})
+  const res = await getTabsList();
+  detailedModules.value = res.data;
+});
 </script>
 
 <style scoped>
@@ -129,8 +129,8 @@ onMounted(async () => {
 
 /* Smooth transitions */
 * {
-  transition-property: color, background-color, border-color, transform,
-    box-shadow;
+  transition-property:
+    color, background-color, border-color, transform, box-shadow;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }

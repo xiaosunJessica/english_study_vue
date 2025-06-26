@@ -29,16 +29,16 @@
 </template>
 
 <script setup>
-import Select from "@/components/Select.vue"
-import Switch from "@/components/Switch.vue"
-import { usePracticeStore } from "@/stores/practiceStore"
+import Select from "@/components/BaseSelect.vue";
+import Switch from "@/components/BaseSwitch.vue";
+import { usePracticeStore } from "@/stores/practiceStore";
 
-const practiceStore = usePracticeStore()
+const practiceStore = usePracticeStore();
 
 // v-model 绑定到 store 里的值
-const updateLearningMode = (val) => practiceStore.setLearningMode(val)
-const updateCurrentSpeed = (val) => practiceStore.setCurrentSpeed(val)
-const updateFeedbackEnabled = (val) => practiceStore.setFeedbackEnabled(val)
+const updateLearningMode = (val) => practiceStore.setLearningMode(val);
+const updateCurrentSpeed = (val) => practiceStore.setCurrentSpeed(val);
+const updateFeedbackEnabled = (val) => practiceStore.setFeedbackEnabled(val);
 
 // Reactive data
 const learningOptions = [
@@ -50,7 +50,7 @@ const learningOptions = [
     label: "在线拼写",
     value: "spelling",
   },
-]
+];
 
 const speedOptions = [
   {
@@ -69,7 +69,7 @@ const speedOptions = [
     label: "x1.6",
     value: 1.6,
   },
-]
+];
 </script>
 
 <style scoped></style>

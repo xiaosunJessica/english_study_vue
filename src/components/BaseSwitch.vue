@@ -1,6 +1,8 @@
 <template>
   <div class="flex items-center space-x-3">
-    <label class="text-sm font-medium text-gray-700 whitespace-nowrap">对错反馈</label>
+    <label class="text-sm font-medium text-gray-700 whitespace-nowrap"
+      >对错反馈</label
+    >
     <div
       @click="toggle"
       class="flex items-center space-x-2 px-3 py-1.5 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent bg-white text-sm"
@@ -22,11 +24,11 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{
-    modelValue: boolean
-    label?: string
-    customClass?: string
-  }>()
-  const emit = defineEmits(['update:modelValue'])
-  const toggle = () => emit('update:modelValue', !props.modelValue)
+const props = defineProps<{
+  modelValue: boolean;
+  label?: string;
+  customClass?: string;
+}>();
+const emit = defineEmits(["update:modelValue"]);
+const toggle = () => emit("update:modelValue", !props.modelValue);
 </script>

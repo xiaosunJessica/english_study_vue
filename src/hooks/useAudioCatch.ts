@@ -18,7 +18,8 @@ async function batchRequest<T>(
       try {
         results[cur] = await handler(urls[cur]);
       } catch (e) {
-        results[cur] = null as any;
+        console.log(e);
+        results[cur] = null as T;
       }
     }
   });
