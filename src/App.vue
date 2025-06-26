@@ -22,7 +22,8 @@
 
 <script setup lang="ts">
 // Main app component
-const texts = ["I", "E", "L", "T", "S"]
+
+const texts = ["I", "E", "L", "T", "S"];
 </script>
 
 <style scoped></style>
